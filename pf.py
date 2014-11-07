@@ -17,11 +17,11 @@ def iinp(sent = "", isPositive = False, allowZero = False): # int_input
 		given = int(raw_input(sent))
 	except:
 		print("That's not a integer!")
-		return iinp(sent)
+		return iinp(sent, isPositive, allowZero)
 	else:
 		if(isPositive and (not allowZero) and given <= 0) or (isPositive and allowZero and given < 0):
 			print("That's not positive!")
-			return iinp(sent)
+			return iinp(sent, isPositive, allowZero)
 		else:
 			return given
 
@@ -33,11 +33,11 @@ def finp(sent = "", isPositive = False, allowZero = False): # float_input
 		given = float(raw_input(sent))
 	except:
 		print("That's not a integer!")
-		return finp(sent)
+		return finp(sent, isPositive, allowZero)
 	else:
 		if(isPositive and (not allowZero) and given <= 0) or (isPositive and allowZero and given < 0):
 			print("That's not positive!")
-			return finp(sent)
+			return finp(sent, isPositive, allowZero)
 		else:
 			return given
 		
