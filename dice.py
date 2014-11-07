@@ -3,7 +3,10 @@
 
 from pf import *
 
+print("This program simulates rolling several dice.\nThe user can choose how many dice are rolled.") # Tell them what the program do
+
 numDices = iinp("How many dices would you like to roll?")
 sides = iinp("How many sides on your die?")
+
 for i in range(1, numDices + 1):
 	print "Die {} shows: ".format(i) + str(randint(1, sides))
