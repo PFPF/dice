@@ -9,25 +9,37 @@ from turtle import *
 from math import *
 from random import *
 
-def iinp(sent = ""): # int_input
+def iinp(sent = "", isPositive = False, allowZero = False): # int_input
 	'''
 		Allow the user to input an integer (if not then let the user to try again)
 	'''
 	try:
-		return int(raw_input(sent))
+		given = int(raw_input(sent))
 	except:
 		print("That's not a integer!")
 		return iinp(sent)
-		
-def finp(sent = ""): # float_input
+	else:
+		if(isPositive and (not allowZero) and given <= 0) or (isPositive and allowZero and given < 0):
+			print("That's not positive!")
+			return iinp(sent)
+		else:
+			return given
+
+def finp(sent = "", isPositive = False, allowZero = False): # float_input
 	'''
 		Allow the user to input an float (if not then let the user to try again)
 	'''
 	try:
-		return float(raw_input(sent))
+		given = float(raw_input(sent))
 	except:
 		print("That's not a integer!")
 		return finp(sent)
+	else:
+		if(isPositive and (not allowZero) and given <= 0) or (isPositive and allowZero and given < 0):
+			print("That's not positive!")
+			return finp(sent)
+		else:
+			return given
 		
 def yninp(sent = "", true = 'y', false = 'n'): # yes_no_input
 	'''
